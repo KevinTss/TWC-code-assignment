@@ -1,13 +1,11 @@
 <template>
-  <div class="home-page">
-    Hello world
+  <el-container class="home-page">
 
-    <el-date-picker
-      v-model="value1"
-      type="date"
-      placeholder="Pick a day">
-    </el-date-picker>
-  </div>
+    <el-header>Header</el-header>
+
+    <el-main>Main</el-main>
+
+  </el-container>
 </template>
 
 <script>
@@ -22,5 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.nahome-pageme {}
+.home-page {
+
+}
 </style>
