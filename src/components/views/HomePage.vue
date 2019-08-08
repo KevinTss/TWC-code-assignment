@@ -1,7 +1,7 @@
 <template>
   <el-container class="home-page">
 
-    <el-header>Header</el-header>
+    <main-header/>
 
     <el-main>Main</el-main>
 
@@ -9,18 +9,21 @@
 </template>
 
 <script>
+import MainHeader from '../ui/layout/MainHeader'
+
 export default {
   name: 'home-page',
-  data() {
-    return {
-      value1: null
-    }
-  }
+  components: { MainHeader }
 }
 </script>
 
 <style lang="scss" scoped>
 .home-page {
-
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .el-main {
+    // background-color: red;
+  }
 }
 </style>
