@@ -10,7 +10,7 @@ export default {
    * @param {Array} cities
    */
   set_cities(state, cities) {
-    state.list = cities
+    state.list = cities.splice(0, 1000)
   },
 
   /**
