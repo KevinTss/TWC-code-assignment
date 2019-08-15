@@ -1,11 +1,9 @@
 <template>
-  <el-container class="home-page">
+  <div class="home-page">
 
-    <main-header/>
 
-    <el-main>Main</el-main>
 
-  </el-container>
+  </div>
 </template>
 
 <script>
@@ -22,8 +20,5 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
-  .el-main {
-    // background-color: red;
-  }
 }
 </style>

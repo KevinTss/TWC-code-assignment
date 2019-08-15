@@ -1,18 +1,32 @@
 <template>
-  <home-page/>
+  <el-container>
+
+    <main-header/>
+
+    <el-main>
+      <router-view/>
+    </el-main>
+
+  </el-container>
 </template>
 
 <script>
-import HomePage from './components/views/HomePage'
+import MainHeader from './components/ui/layout/MainHeader'
 
 export default {
   name: 'app',
   components: {
-    HomePage
+    MainHeader
   }
 }
 </script>
 
 <style lang="scss">
 @import './assets/styles/index';
+
+.el-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 </style>
