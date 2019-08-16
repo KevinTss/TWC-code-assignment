@@ -8,7 +8,7 @@
 
       <el-form-item
         prop="temperature"
-        label="Temparature">
+        label="Select the temparature range that make you happy">
         <el-slider
           v-model="formData.temparatures"
           :min="-20"
@@ -23,7 +23,7 @@
 
       <el-form-item
         prop="conditions"
-        label="Weather conditions">
+        label="Select weather conditions that you don't like">
         <el-checkbox-group v-model="formData.conditions">
           <el-checkbox-button
             v-for="item in conditionOptions"
@@ -36,7 +36,7 @@
 
       <el-form-item
         prop="wind"
-        label="Wind">
+        label="Select the wind speed that will not make you fall">
         <el-slider
           v-model="formData.windSpeed"
           show-input-controls
