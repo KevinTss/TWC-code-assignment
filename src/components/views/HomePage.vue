@@ -12,6 +12,7 @@
 
       <el-form
         :model="formData"
+        :rules="rulesForm"
         ref="weather"
         label-position="top">
 
