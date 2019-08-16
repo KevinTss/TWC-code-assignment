@@ -84,9 +84,6 @@ export default {
         }
       })
     },
-    goToSettings() {
-      this.$router.push({ name: 'setting' })
-    }
   },
   watch: {
     isCitiesAreLoading(newLoading) {
