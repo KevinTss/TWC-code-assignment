@@ -33,6 +33,10 @@
 
       </el-form>
 
+      <div>
+        {{ currentWeather ? "yes" : "no" }}
+      </div>
+
     </el-container>
 
   </div>
@@ -54,7 +58,16 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['citiesList', 'isCitiesAreLoading']),
+    ...mapGetters([
+      'citiesList',
+      'isCitiesAreLoading',
+      'isWeatherLoading',
+      'hasWeatherError',
+      'weatherByCity'
+    ]),
+    currentWeather() {
+      return this.weatherByCity(this.formData.city)
+    }
   },
   methods: {
     ...mapActions(['getCurrentWeather', 'getCities']),
@@ -89,6 +102,11 @@ export default {
         this.options = this.citiesList
       } else if (!newLoading && this.hasCitiesError) {
         this.$message.error(this.hasCitiesError)
+      }
+    },
+    isWeatherLoading(newLoading) {
+      if (!newLoading && this.hasWeatherError) {
+        this.$message.error(this.hasWeatherError)
       }
     }
   },
