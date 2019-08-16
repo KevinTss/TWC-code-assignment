@@ -33,15 +33,18 @@
 
       </el-form>
 
-      <weather-card
-        v-if="currentWeather"
-        :city="currentWeather.name"
-        :main-weather="currentWeather.weather[0].main"
-        :description-weather="currentWeather.weather[0].description"
-        :temperature="currentWeather.main.temp"
-        :wind-speed="currentWeather.wind.speed"
-        :icon="currentWeather.weather[0].icon"
-      />
+
+      <transition name="fade">
+        <weather-card
+          v-if="currentWeather"
+          :city="currentWeather.name"
+          :main-weather="currentWeather.weather[0].main"
+          :description-weather="currentWeather.weather[0].description"
+          :temperature="currentWeather.main.temp"
+          :wind-speed="currentWeather.wind.speed"
+          :icon="currentWeather.weather[0].icon"
+        />
+      </transition>
 
     </el-container>
 
@@ -129,5 +132,12 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>
