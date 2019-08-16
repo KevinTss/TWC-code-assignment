@@ -79,7 +79,7 @@ export default {
         } else {
           this.$message({
             message: 'Something wrong happened, try again',
-            type: 'danger'
+            type: 'error'
           })
         }
       })
