@@ -6,7 +6,7 @@ Hi TWC team !
 
 Thank you to take time to check this assignment. I Strongly recommend you to follow my commits to have a better understanding of my working process.
 
-## Ruen the project locally
+## Run the project locally
 
 Start to clone the repo:
 
@@ -28,3 +28,7 @@ Finally start the server:
 ```
 npm run serve
 ```
+
+### Note
+
+> You can see that I pushed the API key on git, of course `never` follow this!
