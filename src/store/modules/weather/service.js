@@ -10,7 +10,7 @@ export default {
    * @param {String} city
    */
   getWeatherByCity(city) {
-    return API.get(`weather?q=${city}&appid=${OPEN_WEATHER_KEY}`)
+    return API.get(`weather?q=${city}&units=metric&appid=${OPEN_WEATHER_KEY}`)
   },
 
 }
