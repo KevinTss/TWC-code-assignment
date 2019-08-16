@@ -5,7 +5,7 @@ export default {
   /**
    * List of weather data (by id)
    */
-  list: {},
+  list: [],
 
   /**
    * List of actions states

@@ -17,7 +17,7 @@ export default {
     commit(`${REQUEST}${GET_CURRENT_WEATHER}`)
     try {
       const weatherData = await service.getWeatherByCity(city)
-      commit('set_weather_by_city', { city, weatherData })
+      commit('set_weather_by_city', weatherData)
       commit(`${SUCCESS}${GET_CURRENT_WEATHER}`)
     } catch (error) {
       commit(`${FAILED}${GET_CURRENT_WEATHER}`, error.message)

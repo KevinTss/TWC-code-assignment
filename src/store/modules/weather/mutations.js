@@ -9,9 +9,13 @@ export default {
    * @param {Object} state
    * @param {Object} data
    */
-  set_weather_by_city(state, data) {
-    const { city, weatherData } = data
-    state.list[city] = weatherData
+  set_weather_by_city(state, weatherData) {
+    if (state.list.find(item => item.name === weatherData.name)) {
+      console.error('This city already in store')
+      return
+    }
+    state.list.push(weatherData)
+    state = { ...state }
   },
 
   /**

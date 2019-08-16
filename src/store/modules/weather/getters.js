@@ -32,7 +32,7 @@ export default {
    * @return {Function} - This function return a specific city weather.
    */
   weatherByCity(state) {
-    return city => state.list[city]
+    return city => state.list.find(item => item.name === city)
   },
 
 }
