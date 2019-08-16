@@ -9,9 +9,9 @@ export default {
    * @param {Object} state
    * @param {Object} data
    */
-  set_weather_by_city_id(state, data) {
-    const { cityId, weatherData } = data
-    state.list[cityId] = weatherData
+  set_weather_by_city(state, data) {
+    const { city, weatherData } = data
+    state.list[city] = weatherData
   },
 
   /**
