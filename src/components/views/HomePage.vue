@@ -73,10 +73,7 @@ export default {
     submitCity() {
       this.$refs['weather'].validate(valid => {
         if (valid) {
-          this.getCurrentWeather({
-            city: 'London'
-          })
-          //////////
+          this.getCurrentWeather(this.formData.city)
         } else {
           this.$message({
             message: 'Something wrong happened, try again',
