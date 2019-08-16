@@ -46,13 +46,21 @@
         />
       </transition>
 
+      <el-alert
+        v-if="currentWeather"
+        :title="`Today is for you a ${isGoodDay ? 'good' : 'bad'} day!`"
+        :type="isGoodDay ? 'success' : 'error'"
+        :description="alertDescription"
+        effect="dark">
+      </el-alert>
+
     </el-container>
 
   </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 import WeatherCard from '../ui/card/WeatherCard'
 
 export default {
@@ -69,6 +77,7 @@ export default {
     }
   },
   computed: {
+    ...mapState(['setting']),
     ...mapGetters([
       'citiesList',
       'isCitiesAreLoading',
@@ -78,6 +87,30 @@ export default {
     ]),
     currentWeather() {
       return this.weatherByCity(this.formData.city)
+    },
+    currentPreferences() {
+      return this.setting.preferences
+    },
+    isPreferencesMatch() {
+      return {
+        isTempOk: this.currentWeather && this.currentWeather.main.temp >= this.currentPreferences.temparatures[0] && this.currentWeather.main.temp <= this.currentPreferences.temparatures[1],
+        isWindOk: this.currentWeather && this.currentWeather.wind.speed >= this.currentPreferences.windSpeed[0] && this.currentWeather.wind.speed <= this.currentPreferences.windSpeed[1],
+        isConditionsOk: this.currentWeather && !this.currentPreferences.conditions.includes(this.currentWeather.weather[0].main)
+      }
+    },
+    isGoodDay() {
+      return this.isPreferencesMatch.isTempOk && this.isPreferencesMatch.isWindOk && this.isPreferencesMatch.isConditionsOk
+    },
+    alertDescription() {
+      const infoText = "Change your preferences in settings page"
+      if (!this.isGoodDay) {
+        const unMatchesData = []
+        !this.isPreferencesMatch.isTempOk && unMatchesData.push('Temperature')
+        !this.isPreferencesMatch.isWindOk && unMatchesData.push('Wind')
+        !this.isPreferencesMatch.isConditionsOk && unMatchesData.push('Condition')
+        return `You don't like: ${unMatchesData.reduce((acc, value) => `${acc}, ${value}`)} (${infoText})`
+      }
+      return infoText
     }
   },
   methods: {
