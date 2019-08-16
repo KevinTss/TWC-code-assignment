@@ -1,29 +1,30 @@
-# how-is-your-day-buddy
+# How is your day buddy ?
 
-## Project setup
+Hi TWC team !
+
+`Sorry but for this moment the project is still in progress. I will manage the close it for this afternoon.`
+
+Thank you to take time to check this assignment. I Strongly recommend you to follow my commits to have a better understanding of my working process.
+
+## Ruen the project locally
+
+Start to clone the repo:
+
 ```
-npm install
+git clone git@github.com:KevinTss/TWC-code-assignment.git
+```
+Or using https
+```
+git clone https://github.com/KevinTss/TWC-code-assignment.git
 ```
 
-### Compiles and hot-reloads for development
+After going in this new repo make sure to install dependencies:
+
+```
+cd TWC-code-assignment && npm install
+```
+
+Finally start the server:
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
