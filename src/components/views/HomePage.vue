@@ -33,9 +33,15 @@
 
       </el-form>
 
-      <div>
-        {{ currentWeather ? "yes" : "no" }}
-      </div>
+      <weather-card
+        v-if="currentWeather"
+        :city="currentWeather.name"
+        :main-weather="currentWeather.weather[0].main"
+        :description-weather="currentWeather.weather[0].description"
+        :temperature="currentWeather.main.temp"
+        :wind-speed="currentWeather.wind.speed"
+        :icon="currentWeather.weather[0].icon"
+      />
 
     </el-container>
 
@@ -44,9 +50,11 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import WeatherCard from '../ui/card/WeatherCard'
 
 export default {
   name: 'home-page',
+  components: { WeatherCard },
   data() {
     return {
       formData: {
