@@ -107,9 +107,6 @@ export default {
       this.$router.push({ name: 'home' })
     }
   },
-  watch: {
-
-  },
   created() {
     this.formData = { ...this.setting.preferences }
   }
