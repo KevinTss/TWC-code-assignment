@@ -4,24 +4,14 @@ import { GET_CURRENT_WEATHER } from './constants'
 export default {
 
   /**
-   * Set the weather as loading for a specific city
-   *
-   * @param {Object} state
-   * @param {String} city
-   */
-  set_current_weather_to_loading(state, city) {
-    state.list[city] = 'loading'
-  },
-
-  /**
    * Set the weather data in the store list
    *
    * @param {Object} state
    * @param {Object} data
    */
-  set_weather_by_city(state, data) {
-    const { city, weatherData } = data
-    state.list[city] = weatherData
+  set_weather_by_city_id(state, data) {
+    const { cityId, weatherData } = data
+    state.list[cityId] = weatherData
   },
 
   /**

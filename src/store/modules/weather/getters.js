@@ -27,15 +27,6 @@ export default {
   hasWeatherError: state => state.actions[GET_CURRENT_WEATHER].error,
 
   /**
-   * isWeatherByCityLoading
-   * @param {String} city
-   * @return {Function} - This function return if a specific city weather is loading.
-   */
-  isWeatherByCityLoading(state) {
-    return city => state.list[city] && state.list[city] === 'loading'
-  },
-
-  /**
    * weatherByCity
    * @param {String} city
    * @return {Function} - This function return a specific city weather.
